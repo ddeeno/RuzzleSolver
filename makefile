@@ -2,8 +2,8 @@ all: clean RuzzleSolver
 	./RuzzleSolver
 clean: 
 	rm -rf *.o
-RuzzleSolver: RuzzleSolver.o nodetrie.o trie.o
-	g++ *.o -o RuzzleSolver
+RuzzleSolver: RuzzleSolver.o nodetrie.o trie.o 
+	g++ -g *.o -o RuzzleSolver
 
 RuzzleSolver.o:
 	g++ -w -c RuzzleSolver.cpp -o RuzzleSolver.o

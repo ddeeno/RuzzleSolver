@@ -24,13 +24,14 @@ char* stringToCharArray(string s) {
 trie::trie(std::string filepath) {
 	this->root = new nodetrie();
 	string line;
-	ifstream myfile(stringToCharArray(filepath));
+	// ifstream myfile(stringToCharArray(filepath));
+	ifstream myfile("italian.txt");
 	if (myfile.is_open()) {
 		while (myfile.good()) {
 			getline(myfile, line);
 			nodetrie* currentNode = root;
 			for (int i = 0; i < line.size(); i++) {
-				
+				currentNode = currentNode->insert(line[i]);
 			}
 		}
 	}
